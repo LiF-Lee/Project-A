@@ -15,7 +15,15 @@ public class Spawn_Controller : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Check_Player_Alive() == false)
+        {
+            _player = Spawn_Player();
+        }
+    }
+
+    private bool Check_Player_Alive()
+    {
+        return _player != null;
     }
 
     private GameObject Spawn_Player()
