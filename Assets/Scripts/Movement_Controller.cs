@@ -22,7 +22,7 @@ public class Movement_Controller : MonoBehaviour
         Invoke("Respawn_Period_End", 2f);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.anyKey && Respawn_Period == false)
         {
