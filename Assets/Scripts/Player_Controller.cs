@@ -25,11 +25,11 @@ public class Player_Controller : MonoBehaviour
         float _crash_area = -10f;
         if (transform.position.y <= _crash_area)
         {
-            Kill_Player();
+            Kill_Self();
         }
     }
 
-    private void Kill_Player()
+    public void Kill_Self()
     {
         Destroy(gameObject);
     }

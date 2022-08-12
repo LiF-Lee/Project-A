@@ -7,7 +7,7 @@ using System;
 
 public class HP_Controller : MonoBehaviour
 {
-    private Player_Controller HP;
+    private Player_Controller Player;
     private bool HP_Change_Detect = false;
     private int Current_HP, Max_HP, Save_Current_HP, Save_Max_HP;
     [SerializeField] private Slider HP_Slider;
@@ -15,7 +15,7 @@ public class HP_Controller : MonoBehaviour
 
     private void Start()
     {
-        HP = gameObject.GetComponent<Player_Controller>();
+        Player = gameObject.GetComponent<Player_Controller>();
         Get_Lastest_HP();
         Save_Current_HP = Current_HP;
         Save_Max_HP = Max_HP;
@@ -25,6 +25,7 @@ public class HP_Controller : MonoBehaviour
     private void Update()
     {
         Get_Lastest_HP();
+        Player_HP_Status();
         Update_HP_Text();
         if ((Save_Current_HP != Current_HP || Save_Max_HP != Max_HP) && HP_Change_Detect == false)
         {
@@ -34,15 +35,23 @@ public class HP_Controller : MonoBehaviour
         }
     }
 
+    private void Player_HP_Status()
+    {
+        if (Current_HP <= 0)
+        {
+            Player.Kill_Self();
+        } 
+    }
+
     public void Accumulative_HP(int value)
     {
-        HP._HP.Player_Current_HP += value;
+        Player._HP.Player_Current_HP += value;
     }
 
     private void Get_Lastest_HP()
     {
-        Current_HP = HP._HP.Player_Current_HP;
-        Max_HP = HP._HP.Player_Max_HP;
+        Current_HP = Player._HP.Player_Current_HP;
+        Max_HP = Player._HP.Player_Max_HP;
     }
     
     private void Update_HP_Text()
