@@ -14,6 +14,7 @@ public class Player_Controller : MonoBehaviour
 {
     [Header("Player Setting")]
     public HP _HP;
+    public GameObject Kill_Effect;
     
     private void Update()
     {
@@ -29,8 +30,13 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    public void Kill_Self()
+    public void Kill_Self(string reason = "Default")
     {
+        if (reason == "Kill" && Kill_Effect != null)
+        {
+            GameObject effect = Instantiate(Kill_Effect);
+            effect.transform.position = transform.position;
+        }
         Destroy(gameObject);
     }
 }

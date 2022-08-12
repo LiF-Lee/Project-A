@@ -39,7 +39,7 @@ public class HP_Controller : MonoBehaviour
     {
         if (Current_HP <= 0)
         {
-            Player.Kill_Self();
+            Player.Kill_Self("Kill");
         } 
     }
 
