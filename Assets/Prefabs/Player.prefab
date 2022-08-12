@@ -103,7 +103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lv. 2
+  m_text: Lv. 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.802
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 8374051520535273859}
   - component: {fileID: 8374051520535273854}
   - component: {fileID: 2723712777195228830}
+  - component: {fileID: 1762789489068317346}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -583,7 +584,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcebe5a2ef96304aab8dd35b3e3be54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Crash_Area: -10
+  _HP:
+    Player_Current_HP: 100
+    Player_Max_HP: 100
+--- !u!114 &1762789489068317346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374051522363358396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db37255ec7cd386408e5dd71cef44831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_Slider: {fileID: 3679335904003848773}
+  HP_Text: {fileID: 0}
 --- !u!1 &9072167230317269588
 GameObject:
   m_ObjectHideFlags: 0
