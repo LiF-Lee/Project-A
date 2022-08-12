@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loading_Scene_Dark.unity
     guid: 42e30a79caa6f434e93b0baac9da922d
+  - enabled: 1
+    path: Assets/Scenes/Demo_Scene.unity
+    guid: c4880d605bb904ceeb2612f654d4fbad
   m_configObjects: {}
