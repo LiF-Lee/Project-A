@@ -4,44 +4,44 @@ using UnityEngine.SceneManagement;
 
 public class Loading_Scene_Controller : MonoBehaviour
 {
-    private AsyncOperation operation;
-    private static string nextScene = "Title_Scene";
+    private AsyncOperation _operation;
+    private static string _next_scene = "Title_Scene";
 
     private void Start()
     {
         Time.timeScale = 1f;
-        Invoke("StartLoading", 0.3f);
+        Invoke("Start_Loading", 0.3f);
     }
 
-    public static void LoadScene(string sceneName, string loadingSceneUI)
+    public static void LoadScene(string scene_name, string loading_scene_UI)
     {
-        nextScene = sceneName;
-        SceneManager.LoadScene(loadingSceneUI);
+        _next_scene = scene_name;
+        SceneManager.LoadScene(loading_scene_UI);
     }
 
-    private void StartLoading()
+    private void Start_Loading()
     {
-        StartCoroutine(LoadSceneProcess());
+        StartCoroutine(Load_Scene_Process());
     }
 
-    private IEnumerator LoadSceneProcess()
+    private IEnumerator Load_Scene_Process()
     {
         yield return null;
-        operation = SceneManager.LoadSceneAsync(nextScene);
-        operation.allowSceneActivation = false;
+        _operation = SceneManager.LoadSceneAsync(_next_scene);
+        _operation.allowSceneActivation = false;
 
-        while (!operation.isDone)
+        while (!_operation.isDone)
         {
             yield return null;
-            if (operation.progress >= 0.9f)
+            if (_operation.progress >= 0.9f)
             {
-                Invoke("RequestOK", 0.5f);
+                Invoke("Request_OK", 0.5f);
             }
         }
     }
 
-    private void RequestOK()
+    private void Request_OK()
     {
-        operation.allowSceneActivation = true;
+        _operation.allowSceneActivation = true;
     }
 }

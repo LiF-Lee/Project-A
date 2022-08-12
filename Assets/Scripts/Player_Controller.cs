@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
 {
-    [SerializeField] private float Crash_Area = -10f;
+    [SerializeField] private float _crash_area = -10f;
     
     private void Update()
     {
@@ -14,7 +14,7 @@ public class Player_Controller : MonoBehaviour
 
     private void Check_Player_Crash()
     {
-        if (transform.position.y <= Crash_Area)
+        if (transform.position.y <= _crash_area)
         {
             Kill_Player();
         }

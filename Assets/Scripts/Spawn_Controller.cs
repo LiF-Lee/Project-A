@@ -1,19 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawn_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Player_Prefab;
+    [SerializeField] private GameObject _player_prefab;
+    private GameObject _player;
 
     private void Start()
     {
-        GameObject myInstance = Instantiate(Player_Prefab);
-        myInstance.transform.position = transform.position;
+        _player = Spawn_Player();
     }
 
     private void Update()
     {
-        //Debug.Log(GameObject.FindGameObjectsWithTag("Player"));
+        
+    }
+
+    private GameObject Spawn_Player()
+    {
+        GameObject player = Instantiate(_player_prefab);
+        player.transform.position = transform.position;
+        return player;
     }
 }

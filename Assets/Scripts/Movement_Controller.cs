@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Movement_Controller : MonoBehaviour
 {
-    public float speed = 5f;
-    private int default_rotation = -45;
+    [SerializeField] private float speed = 5f;
+    
+    private int _default_rotation = -45;
     private Vector3 forward, right;
     private GameObject UI_Canvas;
 
@@ -36,6 +37,6 @@ public class Movement_Controller : MonoBehaviour
         transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
-        UI_Canvas.transform.rotation = Quaternion.Euler(new Vector3(UI_Canvas.transform.rotation.x, default_rotation - transform.rotation.y, UI_Canvas.transform.rotation.z));
+        UI_Canvas.transform.rotation = Quaternion.Euler(new Vector3(UI_Canvas.transform.rotation.x, _default_rotation - transform.rotation.y, UI_Canvas.transform.rotation.z));
     }
 }
