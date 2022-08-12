@@ -9,6 +9,7 @@ public class Spawn_Controller : MonoBehaviour
     private void Start()
     {
         GameObject myInstance = Instantiate(Player_Prefab);
+        myInstance.transform.position = transform.position;
     }
 
     private void Update()
