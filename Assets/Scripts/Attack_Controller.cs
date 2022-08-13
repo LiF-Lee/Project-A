@@ -6,7 +6,7 @@ using UnityEngine;
 public class Attack_Controller : MonoBehaviour
 {
     public GameObject Bullet;
-    private float _reload_time = 0.5f;
+    [SerializeField] private float _reload_time = 0.5f;
     private bool is_Reloading = false;
     private Movement_Controller _movement_controller;
 

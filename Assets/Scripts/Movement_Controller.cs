@@ -13,11 +13,12 @@ public class Movement_Controller : MonoBehaviour
     private float _UI_Canvas_default_rotation = -45f;
     private Vector3 forward, right;
     private GameObject UI_Canvas, Barrel_Center;
+    private Player_Controller Player;
     private Attack_Controller _attack_controller;
-    private bool Respawn_Period = true;
 
     private void Start()
     {
+        Player = gameObject.GetComponent<Player_Controller>();
         _attack_controller = gameObject.GetComponent<Attack_Controller>();
         UI_Canvas = transform.Find("UI_Canvas").gameObject;
         Barrel_Center = transform.Find("Barrel_Center").gameObject;
@@ -26,12 +27,11 @@ public class Movement_Controller : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-        Invoke("Respawn_Period_End", 2f);
     }
 
     private void FixedUpdate()
     {
-        if (Input.anyKey && Respawn_Period == false)
+        if (Input.anyKey && Player.Get_Respawn_Period() == false)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -48,11 +48,6 @@ public class Movement_Controller : MonoBehaviour
                 _attack_controller.Player_Fire();
             }
         }
-    }
-
-    private void Respawn_Period_End()
-    {
-        Respawn_Period = false;
     }
 
     private void Player_Move()

@@ -45,7 +45,10 @@ public class HP_Controller : MonoBehaviour
 
     public void Accumulative_HP(int value)
     {
-        Player._HP.Player_Current_HP += value;
+        if (Player.Get_Respawn_Period() == false)
+        {
+            Player._HP.Player_Current_HP += value;
+        }
     }
 
     private void Get_Lastest_HP()

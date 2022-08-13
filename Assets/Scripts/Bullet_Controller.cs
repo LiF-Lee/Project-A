@@ -42,6 +42,8 @@ public class Bullet_Controller : MonoBehaviour
         _Explosion_Effect.transform.position = transform.position;
         for (int i = 0; i < colliders.Count; i++)
         {
+            if (colliders[i] == null)
+                break;
             if (colliders[i].gameObject.tag == "Player" || colliders[i].gameObject.tag == "Enemy")
             {
                 if (colliders[i].gameObject.GetComponent<HP_Controller>() == null)

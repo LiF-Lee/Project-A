@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2695524906984179974}
   - component: {fileID: 5098011959192428872}
   - component: {fileID: 6593720008235802369}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player_Bullet_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,9 +102,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 7820022163028128619}
     m_Modifications:
+    - target: {fileID: 100000, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_Name
       value: CFX4 Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_RootOrder
@@ -189,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 1424638478747706, guid: ec83c4e9a9128c847ae82d569a85f7e7, type: 3}
       propertyPath: m_Name
       value: Rocket25_Grey
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424638478747706, guid: ec83c4e9a9128c847ae82d569a85f7e7, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4466927499104338, guid: ec83c4e9a9128c847ae82d569a85f7e7, type: 3}
       propertyPath: m_RootOrder

@@ -15,10 +15,13 @@ public class Player_Controller : MonoBehaviour
     [Header("Player Setting")]
     public HP _HP;
     public GameObject Kill_Effect;
-    
+
+    private bool _Respawn_Period = true;
+
     private void Update()
     {
         Check_Player_Crash();
+        Invoke("Respawn_Period_End", 2f);
     }
 
     private void Check_Player_Crash()
@@ -28,6 +31,16 @@ public class Player_Controller : MonoBehaviour
         {
             Kill_Self();
         }
+    }
+
+    public bool Get_Respawn_Period()
+    {
+        return _Respawn_Period;
+    }
+    
+    public void Respawn_Period_End()
+    {
+        _Respawn_Period = false;
     }
 
     public void Kill_Self(string reason = "Default")

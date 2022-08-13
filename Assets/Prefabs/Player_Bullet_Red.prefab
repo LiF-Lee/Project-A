@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2695524906984179974}
   - component: {fileID: 5098011959192428872}
   - component: {fileID: 6593720008235802369}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player_Bullet_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,9 +102,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 7820022163028128619}
     m_Modifications:
+    - target: {fileID: 100000, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_Name
       value: CFX4 Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
       propertyPath: m_RootOrder
@@ -192,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1156803670215244, guid: 65d7e2f41d2be8e48995bb4070bbeca1, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4483867951744272, guid: 65d7e2f41d2be8e48995bb4070bbeca1, type: 3}
       propertyPath: m_RootOrder

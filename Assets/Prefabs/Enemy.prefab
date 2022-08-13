@@ -679,8 +679,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8374051522363358392}
   - component: {fileID: 2723712777195228830}
-  - component: {fileID: 1762789489068317346}
   - component: {fileID: 7917974091279262981}
+  - component: {fileID: 1762789489068317346}
   - component: {fileID: 8374051522363358399}
   - component: {fileID: 8374051522363358398}
   - component: {fileID: 8374051522363358397}
@@ -725,6 +725,20 @@ MonoBehaviour:
     Player_Current_HP: 100
     Player_Max_HP: 100
   Kill_Effect: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+--- !u!114 &7917974091279262981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374051522363358396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1fb1cc78265ae449a543473950a86cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 7820022163028128618, guid: 7a7294eaf006db84a900fe3d20593560, type: 3}
+  _reload_time: 0.5
 --- !u!114 &1762789489068317346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,19 +753,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Slider: {fileID: 3679335904003848773}
   HP_Text: {fileID: 0}
---- !u!114 &7917974091279262981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374051522363358396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1fb1cc78265ae449a543473950a86cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet: {fileID: 7820022163028128618, guid: 7a7294eaf006db84a900fe3d20593560, type: 3}
 --- !u!33 &8374051522363358399
 MeshFilter:
   m_ObjectHideFlags: 0
