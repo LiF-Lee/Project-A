@@ -10,7 +10,7 @@ public class Movement_Controller : MonoBehaviour
     
     public float Barrel_Center_rotation;
     
-    private float _UI_Canvas_default_rotation;
+    private float _UI_Canvas_default_rotation = -45f;
     private Vector3 forward, right;
     private GameObject UI_Canvas, Barrel_Center;
     private Attack_Controller _attack_controller;
@@ -21,7 +21,6 @@ public class Movement_Controller : MonoBehaviour
         _attack_controller = gameObject.GetComponent<Attack_Controller>();
         UI_Canvas = transform.Find("UI_Canvas").gameObject;
         Barrel_Center = transform.Find("Barrel_Center").gameObject;
-        _UI_Canvas_default_rotation = UI_Canvas.transform.rotation.y;
         Barrel_Center_rotation = Barrel_Center.transform.rotation.y;
         forward = Camera.main.transform.forward;
         forward.y = 0;
