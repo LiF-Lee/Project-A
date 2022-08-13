@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5098011959192428872}
   - component: {fileID: 6593720008235802369}
   m_Layer: 11
-  m_Name: Player_Bullet_Red
+  m_Name: Bullet_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet_Speed: 16
   Bullet_Damage: 28
-  Explosion_Effect: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+  Explosion_Effect: {fileID: 1892078723244562, guid: b0077d81ecd394c4587aaf719539248c, type: 3}
 --- !u!65 &2695524906984179974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!135 &6593720008235802369
 SphereCollider:

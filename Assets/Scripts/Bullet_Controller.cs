@@ -13,7 +13,21 @@ public class Bullet_Controller : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 1f);
+        SetActive_Delay(1f);
+    }
+
+    private void SetActive_Delay(float delay)
+    {
+        Invoke("Active_False", delay);
+    }
+
+    private void Active_False()
+    {
+        if (gameObject.activeSelf == true)
+        {
+            colliders = new List<Collider>();
+            gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
@@ -51,6 +65,6 @@ public class Bullet_Controller : MonoBehaviour
                 colliders[i].gameObject.GetComponent<HP_Controller>().Accumulative_HP(-Bullet_Damage);
             }
         }
-        Destroy(gameObject);
+        Active_False();
     }
 }
