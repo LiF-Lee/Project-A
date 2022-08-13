@@ -43,7 +43,7 @@ public class Movement_Controller : MonoBehaviour
                 Barrel_Move();
             }
 
-            if (Input.GetKey(KeyCode.Space) && _attack_controller.is_Reloading == false)
+            if (Input.GetKey(KeyCode.Space))
             {
                 _attack_controller.Player_Fire();
             }
