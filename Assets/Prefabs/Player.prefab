@@ -740,7 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Move_Speed: 2
   Barrel_Speed: 1.8
-  Barrel_Center_rotation: 0
+  Barrel_Center_rotation: 0.1
 --- !u!114 &7917974091279262981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,8 +753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fb1cc78265ae449a543473950a86cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 7820022163028128618, guid: 7a7294eaf006db84a900fe3d20593560, type: 3}
-  _reload_time: 0.5
+  Bullet: Bullet_Red
+  _reload_time: 0.3
 --- !u!114 &1762789489068317346
 MonoBehaviour:
   m_ObjectHideFlags: 0

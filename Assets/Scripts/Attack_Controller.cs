@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Attack_Controller : MonoBehaviour
 {
-    public GameObject Bullet;
+    public string Bullet;
     private Object_Manager object_manager;
     [SerializeField] private float _reload_time = 0.5f;
     private bool is_Reloading = false;
@@ -23,9 +23,12 @@ public class Attack_Controller : MonoBehaviour
         if (is_Reloading == false)
         {
             is_Reloading = true;
-            GameObject bullet = object_manager.Make_Obj("Bullet_Red");
-            bullet.transform.position = transform.Find("Barrel_Center/Barrel/Bullet_Spawn_Point").gameObject.transform.position;
-            bullet.transform.rotation = Quaternion.Euler(new Vector3(0, _movement_controller.Barrel_Center_rotation, 0));
+            GameObject bullet = object_manager.Make_Obj(Bullet);
+            if (bullet != null)
+            {
+                bullet.transform.position = transform.Find("Barrel_Center/Barrel/Bullet_Spawn_Point").gameObject.transform.position;
+                bullet.transform.rotation = Quaternion.Euler(new Vector3(0, _movement_controller.Barrel_Center_rotation, 0));
+            }
             Invoke("Reload_Done", _reload_time);
         }
     }

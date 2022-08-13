@@ -722,8 +722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HP:
-    Player_Current_HP: 100
-    Player_Max_HP: 100
+    Player_Current_HP: 500
+    Player_Max_HP: 500
   Kill_Effect: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
 --- !u!114 &7917974091279262981
 MonoBehaviour:
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fb1cc78265ae449a543473950a86cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 7820022163028128618, guid: 7a7294eaf006db84a900fe3d20593560, type: 3}
+  Bullet: Bullet_Black
   _reload_time: 0.5
 --- !u!114 &1762789489068317346
 MonoBehaviour:

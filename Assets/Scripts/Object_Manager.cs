@@ -14,8 +14,8 @@ public class Object_Manager : MonoBehaviour
 
     private void Awake()
     {
-        bullet_red = new GameObject[10];
-        bullet_black = new GameObject[10];
+        bullet_red = new GameObject[100];
+        bullet_black = new GameObject[100];
 
         Generate();
     }
