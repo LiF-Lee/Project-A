@@ -7,15 +7,18 @@ public class Object_Manager : MonoBehaviour
 {
     [SerializeField] private GameObject Bullet_Red;
     [SerializeField] private GameObject Bullet_Black;
+    [SerializeField] private GameObject Damage_Effect;
     private GameObject[] bullet_red;
     private GameObject[] bullet_black;
+    private GameObject[] damage_effect;
 
     private GameObject[] target_pool;
 
     private void Awake()
     {
-        bullet_red = new GameObject[100];
-        bullet_black = new GameObject[100];
+        bullet_red = new GameObject[50];
+        bullet_black = new GameObject[50];
+        damage_effect = new GameObject[50];
 
         Generate();
     }
@@ -33,6 +36,12 @@ public class Object_Manager : MonoBehaviour
             bullet_black[i] = Instantiate(Bullet_Black);
             bullet_black[i].SetActive(false);
         }
+        
+        for (int i = 0; i < damage_effect.Length; i++)
+        {
+            damage_effect[i] = Instantiate(Damage_Effect);
+            damage_effect[i].SetActive(false);
+        }
     } 
 
     public GameObject Make_Obj(string type)
@@ -44,6 +53,9 @@ public class Object_Manager : MonoBehaviour
                 break;
             case "Bullet_Black":
                 target_pool = bullet_black;
+                break;
+            case "Damage_Effect":
+                target_pool = damage_effect;
                 break;
         }
 

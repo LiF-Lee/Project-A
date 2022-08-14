@@ -52,6 +52,7 @@ MonoBehaviour:
   Bullet_Speed: 16
   Bullet_Damage: 28
   Explosion_Effect: {fileID: 1892078723244562, guid: b0077d81ecd394c4587aaf719539248c, type: 3}
+  Damage_Effect: {fileID: 6196421056239763904, guid: 1e2e9796109db604c948dd2a648e5e53, type: 3}
 --- !u!65 &2695524906984179974
 BoxCollider:
   m_ObjectHideFlags: 0

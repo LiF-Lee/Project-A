@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet_Red: {fileID: 7820022163028128618, guid: 7a7294eaf006db84a900fe3d20593560, type: 3}
   Bullet_Black: {fileID: 7820022163028128618, guid: 99f7609e400033c43a294a6351176384, type: 3}
+  Damage_Effect: {fileID: 6196421056239763904, guid: 1e2e9796109db604c948dd2a648e5e53, type: 3}

@@ -577,7 +577,6 @@ GameObject:
   - component: {fileID: 3463952583981974331}
   - component: {fileID: 8429367146897987418}
   - component: {fileID: 5473837958627126209}
-  - component: {fileID: 8473747511235011600}
   m_Layer: 9
   m_Name: UI_Canvas
   m_TagString: Untagged
@@ -669,19 +668,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8473747511235011600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747754509677065352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2843f7cd81a95b64aa245c14f3c89cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Canvas: {fileID: 7747754509677065352}
 --- !u!1 &8374051522363358396
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +679,7 @@ GameObject:
   - component: {fileID: 8374051522363358392}
   - component: {fileID: 2723712777195228830}
   - component: {fileID: 1762789489068317346}
+  - component: {fileID: 2010447179049956628}
   - component: {fileID: 8374051522363358399}
   - component: {fileID: 8374051522363358398}
   - component: {fileID: 8374051522363358397}
@@ -752,6 +739,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Slider: {fileID: 3679335904003848773}
   HP_Text: {fileID: 0}
+--- !u!114 &2010447179049956628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374051522363358396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2843f7cd81a95b64aa245c14f3c89cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Canvas: {fileID: 7747754509677065352}
+  Front: 0
 --- !u!33 &8374051522363358399
 MeshFilter:
   m_ObjectHideFlags: 0

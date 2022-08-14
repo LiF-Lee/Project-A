@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Bullet_Controller : MonoBehaviour
 {
     [SerializeField] private float Bullet_Speed = 8f;
     [SerializeField] private int Bullet_Damage = 28;
     [SerializeField] private GameObject Explosion_Effect;
+    [SerializeField] private GameObject Damage_Effect;
 
     private List<Collider> colliders = new List<Collider>();
 
@@ -62,7 +65,8 @@ public class Bullet_Controller : MonoBehaviour
             {
                 if (colliders[i].gameObject.GetComponent<HP_Controller>() == null)
                     return;
-                colliders[i].gameObject.GetComponent<HP_Controller>().Accumulative_HP(-Bullet_Damage);
+                int _Damage = Bullet_Damage + UnityEngine.Random.Range(0, 11);
+                colliders[i].gameObject.GetComponent<HP_Controller>().Accumulative_HP(-_Damage);
             }
         }
         Active_False();

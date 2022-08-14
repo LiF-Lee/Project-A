@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fb1cc78265ae449a543473950a86cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: Bullet_Red
+  _Bullet: 0
   _reload_time: 0.3
 --- !u!114 &1762789489068317346
 MonoBehaviour:
@@ -783,6 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI_Canvas: {fileID: 7747754509677065352}
+  Front: 0
 --- !u!33 &8374051522363358399
 MeshFilter:
   m_ObjectHideFlags: 0

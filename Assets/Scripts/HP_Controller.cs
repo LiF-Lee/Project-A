@@ -8,6 +8,7 @@ using System;
 public class HP_Controller : MonoBehaviour
 {
     private Player_Controller Player;
+    private Object_Manager object_manager;
     private bool HP_Change_Detect = false;
     private int Current_HP, Max_HP, Save_Current_HP, Save_Max_HP;
     [SerializeField] private Slider HP_Slider;
@@ -15,6 +16,7 @@ public class HP_Controller : MonoBehaviour
 
     private void Start()
     {
+        object_manager = GameObject.Find("Object_Manager").gameObject.GetComponent<Object_Manager>();
         Player = gameObject.GetComponent<Player_Controller>();
         Get_Lastest_HP();
         Save_Current_HP = Current_HP;
@@ -47,6 +49,13 @@ public class HP_Controller : MonoBehaviour
     {
         if (Player.Get_Respawn_Period() == false)
         {
+            GameObject _Damage_Effect = object_manager.Make_Obj("Damage_Effect");
+            if (_Damage_Effect != null)
+            {
+                _Damage_Effect.transform.position = gameObject.transform.position;
+                _Damage_Effect.transform.Find("Damage").gameObject.GetComponent<TextMeshProUGUI>().text = $"<color=#FF5733>{value}</color>";
+                _Damage_Effect.gameObject.GetComponent<Damage_Effect_Controller>().Hit();
+            }
             Player._HP.Player_Current_HP += value;
         }
     }
