@@ -59,7 +59,6 @@ public class Movement_Controller : MonoBehaviour
         transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
-        UI_Canvas.transform.rotation = Quaternion.Euler(new Vector3(UI_Canvas.transform.rotation.x, _UI_Canvas_default_rotation - transform.rotation.y, UI_Canvas.transform.rotation.z));
         Barrel_Center.transform.rotation = Quaternion.Euler(new Vector3(Barrel_Center.transform.rotation.x, Barrel_Center_rotation - transform.rotation.y, Barrel_Center.transform.rotation.z));
     }
 

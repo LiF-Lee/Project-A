@@ -7,6 +7,7 @@ TagManager:
   - Player_Bullet
   - FxTemporaire
   - Enemy
+  - Player_Camera
   layers:
   - Default
   - TransparentFX
