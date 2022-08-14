@@ -9,10 +9,8 @@ public class Movement_Controller : MonoBehaviour
     [SerializeField] private float Barrel_Speed = 1.8f;
     
     public float Barrel_Center_rotation;
-    
-    private float _UI_Canvas_default_rotation = -45f;
     private Vector3 forward, right;
-    private GameObject UI_Canvas, Barrel_Center;
+    private GameObject Barrel_Center;
     private Player_Controller Player;
     private Attack_Controller _attack_controller;
 
@@ -20,7 +18,6 @@ public class Movement_Controller : MonoBehaviour
     {
         Player = gameObject.GetComponent<Player_Controller>();
         _attack_controller = gameObject.GetComponent<Attack_Controller>();
-        UI_Canvas = transform.Find("UI_Canvas").gameObject;
         Barrel_Center = transform.Find("Barrel_Center").gameObject;
         Barrel_Center_rotation = Barrel_Center.transform.rotation.y;
         forward = Camera.main.transform.forward;

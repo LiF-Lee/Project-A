@@ -19,11 +19,13 @@ public class Attack_Controller : MonoBehaviour
     [SerializeField] private float _reload_time = 0.5f;
     private bool is_Reloading = false;
     private Movement_Controller _movement_controller;
+    private HP_Controller _hp_controller;
 
     private void Start()
     {
         object_manager = GameObject.Find("Object_Manager").gameObject.GetComponent<Object_Manager>();
         _movement_controller = gameObject.GetComponent<Movement_Controller>();
+        _hp_controller = gameObject.GetComponent<HP_Controller>();
     }
     
     public void Player_Fire()
@@ -40,6 +42,7 @@ public class Attack_Controller : MonoBehaviour
                     break;
             }
             is_Reloading = true;
+            _hp_controller.Player_Status_Not_Normalk();
             GameObject bullet = object_manager.Make_Obj(_bulet_name);
             if (bullet != null)
             {
