@@ -22,9 +22,9 @@ public class HP_Controller : MonoBehaviour
         object_manager = GameObject.Find("Object_Manager").gameObject.GetComponent<Object_Manager>();
         Player = gameObject.GetComponent<Player_Controller>();
         Get_Lastest_HP();
+        Update_HP_Text();
         Save_Current_HP = Current_HP;
         Save_Max_HP = Max_HP;
-        Update_HP_Text();
     }
 
     private void Update()
@@ -108,7 +108,7 @@ public class HP_Controller : MonoBehaviour
             else
             {
                 Player_Status_Not_Normalk();
-                _damage_text = $"<color=#FF5733>{value}</color>";
+                _damage_text = $"<color=#FF5733>{value * -1}</color>";
             }
 
             GameObject _Damage_Effect = object_manager.Make_Obj("Damage_Effect");
