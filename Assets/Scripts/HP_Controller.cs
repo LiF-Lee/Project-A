@@ -71,9 +71,9 @@ public class HP_Controller : MonoBehaviour
     {
         if (Max_HP <= Current_HP)
             return;
-        Accumulative_HP((int)Math.Floor(Max_HP * 0.01 * 10));
         if (_player_status_normal == true)
         {
+            Accumulative_HP((int)Math.Floor(Max_HP * 0.01 * 10));
             Invoke("Heal_Invoke", 2f);
         }
     }
