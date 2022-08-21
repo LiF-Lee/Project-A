@@ -11,7 +11,7 @@ public class HP_Controller : MonoBehaviour
     private Object_Manager object_manager;
     private bool HP_Change_Detect = false;
     private int Current_HP, Max_HP, Save_Current_HP, Save_Max_HP;
-    [SerializeField] private Slider HP_Slider;
+    [SerializeField] private Slider Inner_HP_Slider, Outer_HP_Slider;
     [SerializeField] private TextMeshProUGUI HP_Text;
     private float _timer = 0f;
     private bool _timer_count = true;
@@ -33,12 +33,22 @@ public class HP_Controller : MonoBehaviour
         Get_Lastest_HP();
         Player_HP_Status();
         Update_HP_Text();
-        if ((Save_Current_HP != Current_HP || Save_Max_HP != Max_HP) && HP_Change_Detect == false)
+        if ((Save_Current_HP != Current_HP || Save_Max_HP != Max_HP))
         {
-            HP_Change_Detect = true;
             Save_Current_HP = Current_HP;
-            StartCoroutine(Update_HP_Slider());
+            Save_Max_HP = Max_HP;
+            Outer_HP_Slider.value = Current_HP / (Max_HP * 0.01f) * 0.01f;
+            if (HP_Change_Detect == false)
+            {
+                HP_Change_Detect = true;
+                Invoke("Invoke_Update_HP_Slider", 1f);
+            }
         }
+    }
+
+    private void Invoke_Update_HP_Slider()
+    {
+        StartCoroutine(Update_HP_Slider());
     }
 
     private void Auto_Heal()
@@ -138,7 +148,7 @@ public class HP_Controller : MonoBehaviour
 
     private bool is_HP_Over_Value()
     {
-        return (Current_HP / (Max_HP * 0.01f) > 100 && HP_Slider.value == 1) || (Current_HP / (Max_HP * 0.01f) < 0 && HP_Slider.value == 0);
+        return (Current_HP / (Max_HP * 0.01f) > 100 && Inner_HP_Slider.value == 1) || (Current_HP / (Max_HP * 0.01f) < 0 && Inner_HP_Slider.value == 0);
     }
 
     private IEnumerator Update_HP_Slider()
@@ -147,9 +157,9 @@ public class HP_Controller : MonoBehaviour
         while (HP_Change_Detect)
         {
             yield return null;
-            HP_Slider.value = Mathf.MoveTowards(HP_Slider.value, Current_HP / (Max_HP * 0.01f) * 0.01f, Time.deltaTime * 0.6f);
+            Inner_HP_Slider.value = Mathf.MoveTowards(Inner_HP_Slider.value, Current_HP / (Max_HP * 0.01f) * 0.01f, Time.deltaTime * 0.6f);
 
-            if ((int)(HP_Slider.value * 100) == (int)(Current_HP / (Max_HP * 0.01f)) || is_HP_Over_Value())
+            if ((int)(Inner_HP_Slider.value * 100) == (int)(Current_HP / (Max_HP * 0.01f)) || is_HP_Over_Value())
             {
                 HP_Change_Detect = false;
             }
