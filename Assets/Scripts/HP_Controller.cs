@@ -41,7 +41,7 @@ public class HP_Controller : MonoBehaviour
             if (HP_Change_Detect == false)
             {
                 HP_Change_Detect = true;
-                Invoke("Invoke_Update_HP_Slider", 1f);
+                Invoke("Invoke_Update_HP_Slider", 0.1f);
             }
         }
     }
@@ -157,11 +157,12 @@ public class HP_Controller : MonoBehaviour
         while (HP_Change_Detect)
         {
             yield return null;
-            Inner_HP_Slider.value = Mathf.MoveTowards(Inner_HP_Slider.value, Current_HP / (Max_HP * 0.01f) * 0.01f, Time.deltaTime * 0.6f);
+            Inner_HP_Slider.value = Mathf.MoveTowards(Inner_HP_Slider.value, Outer_HP_Slider.value, Time.deltaTime * 0.25f);
 
             if ((int)(Inner_HP_Slider.value * 100) == (int)(Current_HP / (Max_HP * 0.01f)) || is_HP_Over_Value())
             {
                 HP_Change_Detect = false;
+                Inner_HP_Slider.value = Outer_HP_Slider.value;
             }
         }
     }
